@@ -33,21 +33,15 @@
 
 
 	#if $viewData.sendbutton_visible
-		<input type='submit' value='送信する' onclick="mailform_send()" >
-		<script language="javascript">
-		<!--
-		function mailform_send() {
-		  document.getElementById('navigation').value = '002';
-		}
-		//-->
-		</script>
+		<input type='submit' value='送信する' >
+		<input type='hidden' name='navigation' value='002'>
 	#else
 		<font color='red'>エラーが発生しています。再度入力してください</font>
+		<input type='hidden' name='navigation' value=''>
 		<br /><br />
 	#end if
 
 		<input type='submit' value='入力し直す'>
-		<input type='hidden' name='navigation' value=''>
 
 		</form>
 	</body>

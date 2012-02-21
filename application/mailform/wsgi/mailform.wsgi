@@ -15,14 +15,14 @@ def application(environ, start_response):
 
         elif(viewData.navigation == '001'):
             template = Template(
-                file='/develop/MailForm/application/mailform/template/mailform.tmpl')
+                file='/develop/MailForm/application/mailform/template/mailform_check.tmpl')
             template.viewData = MailformModule.checkViewData(viewData)
 
         elif(viewData.navigation == '002'):
             template = Template(
-                file='/develop/MailForm/application/mailform/template/mailform.tmpl')
+                file='/develop/MailForm/application/mailform/template/mailform_send.tmpl')
             template.viewData = viewData
-            MailformModule.sendMail(viewData)
+            # MailformModule.sendMail(viewData)
 
     except:
         template = SystemUtility.createErrorTemplate()

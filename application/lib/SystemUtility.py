@@ -37,3 +37,5 @@ def createErrorTemplate():
     template.error_data = {}
     error_message = traceback.format_exc(sys.exc_info()[2])
     template.error_data['error_log'] = convertString('\n', '<br />', error_message)
+
+    return template

@@ -79,7 +79,7 @@ def sendMail(viewData):
     import xml.sax.saxutils
 
     from_address = 'xxxx@xxxxx.xxx'
-    to_addres = 'xxxx@xxxxx.xxx'
+    to_address = 'xxxx@xxxxx.xxx'
     charset = 'ISO-2022-JP'
     subject = u'お問い合わせ'
 
@@ -96,9 +96,9 @@ def sendMail(viewData):
     msg = MIMEText(body.encode(charset), "plain", charset)
     msg['Subject']    = Header(subject, charset)
     msg['From']       = from_address
-    msg['To']         = to_addres
+    msg['To']         = to_address
     msg['Date']       = formatdate(localtime=True)
 
     smtp = smtplib.SMTP('xxxxxx.xx.jp')
-    smtp.sendmail(from_address, to_addres, msg.as_string())
+    smtp.sendmail(from_address, to_address, msg.as_string())
     smtp.close()
