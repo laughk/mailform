@@ -1,0 +1,54 @@
+<html>
+	<body>
+		<form name='form' method='POST' action='/mailform/mailform.wsgi'>
+
+		<input type='hidden' name='name' value="$viewData.name">
+		<input type='hidden' name='mailaddress' value="$viewData.mailaddress">
+		<input type='hidden' name='subject' value="$viewData.subject">
+		<input type='hidden' name='question' value="$viewData.question">
+
+		<u>お名前</u><br />
+	#if $viewData.name_error != ''
+		<font color='red'>$viewData.name_error</font><br />
+	#end if
+		$viewData.name<br /><br />
+
+		<u>メールアドレス</u><br />
+	#if $viewData.mailaddress_error != ''
+		<font color='red'>$viewData.mailaddress_error</font><br />
+	#end if
+		$viewData.mailaddress<br /><br />
+
+		<u>件名</u><br />
+	#if $viewData.subject_error != ''
+		<font color='red'>$viewData.subject_error</font><br />
+	#end if
+		$viewData.subject<br /><br />
+
+		<u>お問い合わせ内容</u><br />
+	#if $viewData.question_error != ''
+		<font color='red'>$viewData.question_error</font><br />
+	#end if
+		$viewData.question<br /><br />
+
+
+	#if $viewData.sendbutton_visible
+		<input type='submit' value='送信する' onclick="mailform_send()" >
+		<script language="javascript">
+		<!--
+		function mailform_send() {
+		  document.getElementById('navigation').value = '002';
+		}
+		//-->
+		</script>
+	#else
+		<font color='red'>エラーが発生しています。再度入力してください</font>
+		<br /><br />
+	#end if
+
+		<input type='submit' value='入力し直す'>
+		<input type='hidden' name='navigation' value=''>
+
+		</form>
+	</body>
+</html>

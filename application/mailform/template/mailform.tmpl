@@ -1,0 +1,23 @@
+<html>
+	<body style="margin:30px">
+		<form name='form' method='POST' action='/mailform/mailform.wsgi'>
+		お名前<br />
+		<input type='text' size='20' name='name' value='$viewData.name'>
+		<br /><br />
+
+		メールアドレス<br />
+		<input type='text' size='50' name='mailaddress' value='$viewData.mailaddress'>
+		<br /><br />
+
+		件名<br />
+		<input type='text' size='20' name='subject' value='$viewData.subject'>
+		<br /><br />
+
+		お問い合わせ内容<br />
+		<textarea row='5' cols='50' name='question'>$viewData.question</textarea>
+		<br /><br />
+
+		<input type='hidden' name='navigation' value='001'>
+		</form>
+	</body>
+</html>
